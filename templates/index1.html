@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오목 게임</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        #game-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80vw;
+            position: relative;
+        }
+
+        #player1, #player2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        #player1 span, #player2 span {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .turn-label {
+            background-color: yellow;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            position: absolute;
+            top: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            background-color: #fff;
+            margin: 0 50px;
+        }
+
+        td {
+            width: 40px;
+            height: 40px;
+            border: 1px solid black;
+            text-align: center;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        .player1, .player2 {
+            width: 36px; /* 돌의 크기를 칸에 맞게 설정 */
+            height: 36px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* 돌을 가운데에 맞추기 */
+        }
+
+        .player1 {
+            background-color: #2e2e2e; /* Player 1의 돌 색상 */
+            border: 2px solid rgb(0, 0, 0); /* 검정색 윤곽선 */
+        }
+
+        .player2 {
+            background-color: #f1f1f1; /* Player 2의 돌 색상 (게임이 끝났을 때 흰색) */
+            border: 2px solid rgb(0, 0, 0); /* 검정색 윤곽선 */
+        }
+
+        #turn-label-1 {
+            left: 30px;
+        }
+
+        #turn-label-2 {
+            right: 30px;
+        }
+
+        #turn-info {
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .cell {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="player1">
+            <div class="turn-label" id="turn-label-1">YOU TURN</div>
+            <span style="color: #FF6B6B;">1P</span>
+        </div>
+        <table id="board"></table>
+        <div id="player2">
+            <div class="turn-label" id="turn-label-2" style="display: none;">YOU TURN</div>
+            <span style="color: #4C6EF5;">2P</span>
+        </div>
+    </div>
+    <div id="turn-info"></div> <!-- 턴 정보를 표시할 부분 추가 -->
+
+    <script src="./static/script1.js"></script>
+</body>
+</html>
