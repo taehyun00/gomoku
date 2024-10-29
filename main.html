@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* 수직 방향 정렬 */
+            justify-content: center;
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+        button {
+            background-color: dodgerblue;
+            color: white;
+            border-radius: 50px;
+            border: none;
+            width: 250px;
+            height: 60px;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 20px; /* 버튼과 체크박스 사이 간격 추가 */
+        }
+        button.db {
+            background-color: dodgerblue;
+            color: white;
+            border-radius: 50px;
+            border: none;
+            width: 250px;
+            height: 60px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+            
+        /* 체크박스 스타일 */
+        input[type='checkbox'] {
+            margin-right: 10px; /* 체크박스와 레이블 사이 간격 */
+        }
+    </style>
+    <script>
+        function startGame() {
+            const checkboxes = document.getElementsByName("animal");
+            let selectedValue = null;
+        
+            checkboxes.forEach((cb) => {
+                if (cb.checked) {
+                    selectedValue = cb.value; // 선택된 체크박스의 값
+                }
+            });
+        
+            if (selectedValue) {
+                window.location.href = `/start?mode=${selectedValue}`; 
+            } else {
+                alert("게임 모드를 선택하세요."); // 선택하지 않았을 때 경고
+            }
+        }
+        function checkOnlyOne(element) {
+            const checkboxes = document.getElementsByName("animal");
+            checkboxes.forEach((cb) => {
+                cb.checked = false; // 모든 체크박스의 체크 해제
+            });
+            element.checked = true; // 클릭한 체크박스만 체크
+        }
+
+        function resetDatabase() {
+            window.location.href = `/reset`; 
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button type="button" onclick="startGame()">게임 시작</button>
+        <button type="button" onclick="resetDatabase()" class="db">데이터베이스 초기화</button>
+        <div>
+            <input type='checkbox' name='animal' value='blind' onclick='checkOnlyOne(this)'/> 블라인드
+            <br />
+            <input type='checkbox' name='animal' value='normal' onclick='checkOnlyOne(this)'/> 일반
+        </div>
+    </div>
+</body>
+</html>
