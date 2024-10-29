@@ -198,4 +198,4 @@ def start_game():
 
 if __name__ == '__main__':
     init_db()  # 앱 시작 시 데이터베이스 초기화
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)
