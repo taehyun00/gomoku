@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderBoard(board) {
         boardElement.innerHTML = ''; // 이전 보드 내용 제거
-        for (let y = 0; y < 15; y++) {
+        for (let y = 0; y < 8; y++) {
             const row = document.createElement('tr'); // 테이블 행 생성
-            for (let x = 0; x < 15; x++) {
+            for (let x = 0; x < 8; x++) {
                 const cell = document.createElement('td'); // 테이블 셀 생성
                 cell.dataset.x = x;
                 cell.dataset.y = y;
