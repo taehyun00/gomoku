@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 보드를 렌더링하는 함수
     function renderBoard(board) {
         boardElement.innerHTML = ''; // 이전 보드 내용 제거
-        for (let y = 0; y < 32; y++) {
+        for (let y = 0; y < 16; y++) {
             const row = document.createElement('tr'); // 테이블 행 생성
-            for (let x = 0; x < 32; x++) {
+            for (let x = 0; x < 16; x++) {
                 const cell = document.createElement('td'); // 테이블 셀 생성
                 cell.dataset.x = x;
                 cell.dataset.y = y;
