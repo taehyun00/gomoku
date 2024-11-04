@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             boardElement.appendChild(row); // 행을 보드에 추가
         }
+    }
     
 
     // 돌을 놓는 함수
@@ -93,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 3000);
         }
     }
-}
     // 게임에 참여하는 함수
     async function joinGame() {
         const response = await fetch('/join', { method: 'POST' });
