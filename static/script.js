@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 3000);
         }
     }
-
+}
     // 게임에 참여하는 함수
     async function joinGame() {
         const response = await fetch('/join', { method: 'POST' });
@@ -108,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
             updateBoard(); // 보드 초기화 및 업데이트
         }
     }
-}
     joinGame();
     setInterval(updateBoard, 500); // 주기적으로 보드 업데이트
 });
