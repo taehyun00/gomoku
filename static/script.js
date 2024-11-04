@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify({ x, y, player })
         });
 
-    }
     
         const result = await res.json();
         if (result.status === "error") {
