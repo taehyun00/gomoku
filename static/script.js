@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const boardElement = document.getElementById('board');
     const turnInfo = document.getElementById('turn-info');
-    let player = null;
+    const player = null;
     let isGameFinished = false;  // 게임 종료 상태를 추적합니다.
     let isSpectator = false; // 관전자 여부를 추적합니다.
 
@@ -55,6 +55,22 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ x, y, player })
         });
+
+        const turn = player;
+        if ( turn = 1 ){
+            const turninfo = Document.getElementById(player1);
+            const turninfo1 = Document.getElementById(player2);
+            turninfo.hidden;
+            turninfo1.show;
+            
+        }
+        if ( turn = 2 ){
+            const turninfo = Document.getElementById(player1);
+            const turninfo1 = Document.getElementById(player2);
+            turninfo.show;
+            turninfo1.hidden;
+            
+        }
 
         const result = await res.json();
         if (result.status === "error") {
