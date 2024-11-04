@@ -56,21 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify({ x, y, player })
         });
 
-        const turn = player;
-        if ( turn = 1 ){
-            const turninfo = Document.getElementById(player1);
-            const turninfo1 = Document.getElementById(player2);
-            turninfo.hidden;
-            turninfo1.show;
-            
-        }
-        if ( turn = 2 ){
-            const turninfo = Document.getElementById(player1);
-            const turninfo1 = Document.getElementById(player2);
-            turninfo.show;
-            turninfo1.hidden;
-            
-        }
+    
 
         const result = await res.json();
         if (result.status === "error") {
