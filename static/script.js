@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             boardElement.appendChild(row); // 행을 보드에 추가
         }
-    }
+    
 
     // 돌을 놓는 함수
     async function makeMove(x, y) {
@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify({ x, y, player })
         });
 
-    
-
+    }
+    }
         const result = await res.json();
         if (result.status === "error") {
             alert(result.message);
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             updateBoard(); // 보드 업데이트
         }
-    }
+    
 
     // 보드 업데이트 함수
     async function updateBoard() {
