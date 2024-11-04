@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             boardElement.appendChild(row); // 행을 보드에 추가
         }
-    }
+
     
 
     // 돌을 놓는 함수
@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     }
+}
     
         const result = await res.json();
         if (result.status === "error") {
