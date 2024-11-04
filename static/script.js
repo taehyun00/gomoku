@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     }
-    }
+    
         const result = await res.json();
         if (result.status === "error") {
             alert(result.message);
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateBoard(); // 보드 초기화 및 업데이트
         }
     }
-
+}
     joinGame();
     setInterval(updateBoard, 500); // 주기적으로 보드 업데이트
 });
