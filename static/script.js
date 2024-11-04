@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     }
-}
     
         const result = await res.json();
         if (result.status === "error") {
@@ -79,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             updateBoard(); // 보드 업데이트
         }
-    
+    }
 
     // 보드 업데이트 함수
     async function updateBoard() {
