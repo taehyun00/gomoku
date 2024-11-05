@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (stone) {
                     // 게임 종료된 경우 Player 2의 색상 변경
+                    if (player === 'spectator' && stone.player === 2) {
+                    stoneDiv.classList.add('player2-spectator');
                     if (isGameFinished && stone.player === 2) {
                         stoneDiv.classList.add('player2-win');
                     } else {
@@ -29,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // 관람자인 경우 셀 클릭을 비활성화합니다.
                 if (player !== 'spectator') {
                     cell.addEventListener('click', () => makeMove(x, y));
-                    stoneDiv.classList.add(stone.player === 1 ? 'player1' : 'player2');
+                    
                 }
                 row.appendChild(cell); // 셀을 행에 추가
             }
