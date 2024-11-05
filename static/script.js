@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // 관람자인 경우 셀 클릭을 비활성화합니다.
                 if (player !== 'spectator') {
                     cell.addEventListener('click', () => makeMove(x, y));
+                    stoneDiv.classList.add(stone.player === 1 ? 'player1' : 'player2');
                 }
                 row.appendChild(cell); // 셀을 행에 추가
             }
