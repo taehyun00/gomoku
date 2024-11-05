@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // 게임 종료된 경우 Player 2의 색상 변경
                     if (player === 'spectator' && stone.player === 2) {
                     stoneDiv.classList.add('player2-spectator');
+                    }
                     if (isGameFinished && stone.player === 2) {
                         stoneDiv.classList.add('player2-win');
                     } else {
